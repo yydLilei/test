@@ -17,6 +17,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    signingConfigs {
+        debug {
+            storeFile file('C:/Users/admin/.android/debug.keystore')//签名文件路径
+        }
+    }
 }
 
 dependencies {
