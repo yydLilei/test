@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            storeFile file('../key.jks')//签名文件路径
+            storePassword "111111"
+            keyAlias "key"
+            keyPassword "111111"  //签名密码
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
@@ -15,6 +23,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 //    signingConfigs {
@@ -22,14 +31,6 @@ android {
 //            storeFile file('C:/Users/admin/.android/debug.keystore')//签名文件路径
 //        }
 //    }
-    signingConfigs {
-        release {
-            storeFile file('../key.jks')//签名文件路径
-            storePassword "111111"
-            keyAlias "key"
-            keyPassword "111111"  //签名密码
-        }
-    }
 }
 
 dependencies {
