@@ -24,10 +24,10 @@ android {
 //    }
     signingConfigs {
         release {
-            storeFile file('F:/keystore/keystore')//签名文件路径
-            storePassword "yongyida"
-            keyAlias "Robot"
-            keyPassword "yongyida"  //签名密码
+            storeFile file('../key.jks')//签名文件路径
+            storePassword "111111"
+            keyAlias "key"
+            keyPassword "111111"  //签名密码
         }
     }
 }
